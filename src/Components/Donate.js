@@ -25,7 +25,7 @@ function AboutUs() {
 
 
   const addDonate = () => {
-    Axios.post("https://blood-don.herokuapp.com/api/create", {
+    Axios.post("https://blood-don.herokuapp.com/create", {
       firstname: firstname,
       lastname: lastname,
       email: email,
