@@ -2,8 +2,10 @@ import React from "react";
 import "./Donate.css";
 import { useState } from "react";
 import Axios from "axios";
+import PhoneInput from "react-phone-number-input/input";
 
 function AboutUs() {
+  let link = <a href="https://blooddonations.netlify.app/Terms">terms and conditions</a>;
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("");
   const [email, setemail] = useState("");
@@ -22,8 +24,6 @@ function AboutUs() {
   const [show7, setshow7] = useState(true);
   const [show8, setshow8] = useState(true);
 
-
-
   const addDonate = () => {
     Axios.post("https://blood-don.herokuapp.com/create", {
       firstname: firstname,
@@ -39,49 +39,47 @@ function AboutUs() {
     });
   };
 
-
   const Validation = () => {
     let valid = true;
-    if (!email.includes('@')){
+    if (!email.includes("@")) {
       setshow1(false);
-      valid =false;
+      valid = false;
     }
-    if (firstname === ''){
+    if (firstname === "") {
       setshow2(false);
-      valid =false;
+      valid = false;
     }
-    if (lastname === ''){
+    if (lastname === "") {
       setshow3(false);
-      valid =false;
+      valid = false;
     }
-    if (gender === ''){
+    if (gender === "") {
       setshow4(false);
-      valid =false;
+      valid = false;
     }
-    if (groupe === ''){
+    if (groupe === "") {
       setshow5(false);
-      valid =false;
+      valid = false;
     }
-    if (phone === ''){
+    if (phone === 0) {
       setshow6(false);
-      valid =false;
+      valid = false;
     }
-    if (state === ''){
+    if (state === "") {
       setshow7(false);
-      valid =false;
+      valid = false;
     }
-    if (adresse === ''){
+    if (adresse === "") {
       setshow8(false);
-      valid =false;
+      valid = false;
     }
+
     console.log(valid);
-    if(valid){
+    if (valid) {
       setshow(true);
       addDonate();
     }
   };
-
-  
 
   return (
     <div>
@@ -90,7 +88,8 @@ function AboutUs() {
         <div class="form">
           <div class="inputfield">
             <label>First Name</label>
-            <input style={{border: !show2? '1px solid red':null}}
+            <input
+              style={{ border: !show2 ? "1px solid red" : null }}
               type="text"
               class="input"
               onChange={(e) => {
@@ -100,7 +99,8 @@ function AboutUs() {
           </div>
           <div class="inputfield">
             <label>Last Name</label>
-            <input style={{border: !show3? '1px solid red':null}}
+            <input
+              style={{ border: !show3 ? "1px solid red" : null }}
               type="text"
               class="input"
               onChange={(e) => {
@@ -110,7 +110,8 @@ function AboutUs() {
           </div>
           <div class="inputfield">
             <label>Email Address</label>
-            <input style={{border: !show1? '1px solid red':null}}
+            <input
+              style={{ border: !show1 ? "1px solid red" : null }}
               class="input"
               onChange={(e) => {
                 setemail(e.target.value);
@@ -120,7 +121,8 @@ function AboutUs() {
           <div class="inputfield">
             <label>Gender</label>
             <div class="custom_select">
-              <select style={{border: !show4? '1px solid red':null}}
+              <select
+                style={{ border: !show4 ? "1px solid red" : null }}
                 onChange={(e) => {
                   setgender(e.target.value);
                 }}
@@ -134,7 +136,8 @@ function AboutUs() {
           <div class="inputfield">
             <label>Groupe</label>
             <div class="custom_select">
-              <select style={{border: !show5? '1px solid red':null}}
+              <select
+                style={{ border: !show5 ? "1px solid red" : null }}
                 onChange={(e) => {
                   setgroupe(e.target.value);
                 }}
@@ -153,18 +156,19 @@ function AboutUs() {
           </div>
           <div class="inputfield">
             <label>Phone Number</label>
-            <input style={{border: !show6? '1px solid red':null}}
-              type="text"
+            <PhoneInput
+              style={{ border: !show6 ? "1px solid red" : null }}
+              country="US"
+              value={phone}
               class="input"
-              onChange={(e) => {
-                setphone(e.target.value);
-              }}
+              onChange={setphone}
             />
           </div>
           <div class="inputfield">
             <label>State</label>
             <div class="custom_select">
-              <select style={{border: !show7? '1px solid red':null}}
+              <select
+                style={{ border: !show7 ? "1px solid red" : null }}
                 onChange={(e) => {
                   setstate(e.target.value);
                 }}
@@ -183,7 +187,8 @@ function AboutUs() {
           </div>
           <div class="inputfield">
             <label>Address</label>
-            <textarea style={{border: !show8? '1px solid red':null}}
+            <textarea
+              style={{ border: !show8 ? "1px solid red" : null }}
               class="textarea"
               onChange={(e) => {
                 setadresse(e.target.value);
@@ -191,11 +196,7 @@ function AboutUs() {
             ></textarea>
           </div>
           <div class="inputfield terms">
-            <label class="check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <p>Agreed to terms and conditions</p>
+            <p>By clicking submit you agree to our {link} </p>
           </div>
           <div class="inputfield">
             <input
@@ -203,17 +204,19 @@ function AboutUs() {
               value="Register"
               class="btn"
               // eslint-disable-next-line no-unused-expressions
-              onClick={()=>{Validation()}}
+              onClick={() => {
+                Validation();
+              }}
             />
           </div>
         </div>
       </div>
 
-      {
-        show?<div className="alert alert-success" role="alert">
-        <strong>Well done!</strong>  You successfully Registered
-      </div>:null
-      }
+      {show ? (
+        <div className="alert alert-success" role="alert">
+          <strong>Well done!</strong> You successfully Registered
+        </div>
+      ) : null}
     </div>
   );
 }

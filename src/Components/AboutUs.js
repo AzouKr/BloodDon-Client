@@ -4,7 +4,7 @@ import "./AboutUs.css";
 function AboutUs() {
   return (
     <div>
-      <div className="container">
+      <div className="section">
         <h1 className="titl">Introducing the site</h1>
         <h1 className="subtit">
           This site aims to connect those who need blood and those who can

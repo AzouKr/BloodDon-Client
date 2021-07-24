@@ -4,7 +4,7 @@ import "./terms.css";
 function Terms() {
   return (
     <div>
-      <div className="container">
+      <div className="section">
         <h1 className="titl1">Donation Terms</h1>
         <h1 className="subtit1">
         What the donor is supposed to do before the donation:

@@ -1,60 +1,62 @@
 
 .titl1{
-    position: absolute;
+    position: relative;
     left: 11rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
     font-size: 59px;
 }
 
 .subtit1{
-    position: absolute;
-    top: 100px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     left: 8;
     font-size: 20px;
 }
 
 .para1{
-    position: absolute;
-    top: 170px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     line-height: 25px;
 }
 
 .one{
-    position: absolute;
-    top: 150px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     font-size: 17px;
 
 }
 
 .subtit2{
-    position: absolute;
-    top: 240px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     left: 8;
     font-size: 20px;
 }
 
 .two{
-    position: absolute;
-    top: 280px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     font-size: 17px;
 
 }
 
 .subtit3{
-    position: absolute;
-    top: 370px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     font-size: 20px;
 }
 
 .three{
-    position: absolute;
-    top: 410px;
+    position: relative;
     left: 11rem;
+    padding-bottom: 20px;
     font-size: 17px;
 
 }
