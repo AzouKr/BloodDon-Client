@@ -41,19 +41,19 @@ function Need() {
     return info.map((item) => {
       return (
         <li className="table-row">
-              <div className="col col-1" data-label="Job Id">
+              <div className="col col-11" data-label="Job Id">
                 {item.user_id}
               </div>
-              <div className="col col-2" data-label="Customer Name">
+              <div className="col col-22" data-label="Customer Name">
                 {item.phone}
               </div>
-              <div className="col col-3" data-label="Amount">
+              <div className="col col-33" data-label="Amount">
                 {item.groupe}
               </div>
-              <div className="col col-3" data-label="Amount">
+              <div className="col col-33" data-label="Amount">
                 {item.gender}
               </div>
-              <div className="col col-4" data-label="Payment Status">
+              <div className="col col-44" data-label="Payment Status">
                 {item.state}
               </div>
             </li>

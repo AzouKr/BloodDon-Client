@@ -58,6 +58,26 @@ body {
       color: white;
       font-weight: bold;
     }
+    .col-11 {
+      flex-basis: 25%;
+      color: black;
+      font-weight: bold;
+    }
+    .col-22 {
+      flex-basis: 25%;
+      color: black;
+      font-weight: bold;
+    }
+    .col-33 {
+      flex-basis: 25%;
+      color: black;
+      font-weight: bold;
+    }
+    .col-44 {
+      flex-basis: 25%;
+      color: black;
+      font-weight: bold;
+    }
     
     @media all and (max-width: 767px) {
       .table-header {
