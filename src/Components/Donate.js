@@ -5,7 +5,7 @@ import Axios from "axios";
 import PhoneInput from "react-phone-number-input/input";
 
 function AboutUs() {
-  let link = <a href="https://blooddonations.netlify.app/Terms">terms and conditions</a>;
+  let link = <a href="https://blooddonations.netlify.app/Terms" target="_blank" rel="noopener noreferrer" >terms and conditions</a>;
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("");
   const [email, setemail] = useState("");
