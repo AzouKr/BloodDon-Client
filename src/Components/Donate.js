@@ -23,6 +23,19 @@ function AboutUs() {
   const [show6, setshow6] = useState(true);
   const [show7, setshow7] = useState(true);
   const [show8, setshow8] = useState(true);
+  const [info, setinfo] = useState([]);
+
+  Axios.get("https://blood-don.herokuapp.com/state").then((response) => {
+      setinfo(response.data);
+    });
+
+    function display() {
+      return info.map((item) => {
+        return (
+          <option value={item.nomstate}>{item.nomstate}</option>
+        );
+      });
+    }
 
   const addDonate = () => {
     Axios.post("https://blood-don.herokuapp.com/create", {
@@ -174,14 +187,7 @@ function AboutUs() {
                 }}
               >
                 <option value="">Select</option>
-                <option value="Alger">Alger</option>
-                <option value="Oran">Oran</option>
-                <option value="Constantine">Constantine</option>
-                <option value="Setif">Setif</option>
-                <option value="Ouargla">Ouargla</option>
-                <option value="Blida">Blida</option>
-                <option value="Bechar">Bechar</option>
-                <option value="Jijel">Jijel</option>
+                {display()}
               </select>
             </div>
           </div>
