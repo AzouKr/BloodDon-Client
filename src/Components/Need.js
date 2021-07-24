@@ -42,9 +42,6 @@ function Need() {
     return info.map((item) => {
       return (
         <li className="table-row">
-              <div className="col col-11" data-label="Job Id">
-                {item.user_id}
-              </div>
               <div className="col col-22" data-label="Customer Name">
                 {item.phone}
               </div>
