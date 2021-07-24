@@ -171,7 +171,7 @@ function AboutUs() {
             <label>Phone Number</label>
             <PhoneInput
               style={{ border: !show6 ? "1px solid red" : null }}
-              country="DZ"
+              country="DZA"
               value={phone}
               class="input"
               onChange={setphone}
