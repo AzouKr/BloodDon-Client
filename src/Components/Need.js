@@ -18,6 +18,7 @@ function Need() {
 
     }).then((response) => {
       setinfo(response.data);
+      console.log(info);
     });
   };
   
@@ -100,7 +101,6 @@ function Need() {
         <br></br>
           <ul className="responsive-table">
             <li className="table-header">
-              <div className="col col-1">User Id</div>
               <div className="col col-2">Phone</div>
               <div className="col col-3">Groupe</div>
               <div className="col col-3">Gender</div>
