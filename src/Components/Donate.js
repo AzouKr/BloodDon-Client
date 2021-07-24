@@ -23,16 +23,25 @@ function AboutUs() {
   const [show6, setshow6] = useState(true);
   const [show7, setshow7] = useState(true);
   const [show8, setshow8] = useState(true);
-  const [info, setinfo] = useState([]);
 
-  Axios.get("https://blood-don.herokuapp.com/states").then((response) => {
-      setinfo(response.data);
-    });
+  const states = [
+    {num:1, nom:'Adrar'},{num:2, nom:'Chlef'},{num:3, nom:'Laghouat'},{num:4, nom:'Oum El Bouaghi'},{num:5, nom:'Batna'},{num:6, nom:'Béjaïa'},
+    {num:7, nom:'Biskra'},{num:8, nom:'Béchar'},{num:9, nom:'Blida'},{num:10, nom:'Bouira'},{num:11, nom:'Tamanrasset'},{num:12, nom:'Tébessa'},
+    {num:13, nom:'Tlemcen'},{num:14, nom:'Tiaret'},{num:15, nom:'Tizi Ouzou'},{num:16, nom:'Alger'},{num:17, nom:'Djelfa'},{num:18, nom:'Jijel'},
+    {num:19, nom:'Sétif'},{num:20, nom:'Saïda'},{num:21, nom:'Skikda'},{num:22, nom:'Sidi Bel Abbès'},{num:23, nom:'Annaba'},{num:24, nom:'Guelma'},
+    {num:25, nom:'Constantine'},{num:26, nom:'Médéa'},{num:27, nom:'Mostaganem'},{num:28, nom:'MSila'},{num:29, nom:'Mascara'},{num:30, nom:'Ouargla'},
+    {num:31, nom:'Oran'},{num:32, nom:'El Bayadh'},{num:33, nom:'Illizi'},{num:34, nom:'Bordj Bou Arréridj'},{num:35, nom:'Boumerdès'},{num:36, nom:'El Tarf'},
+    {num:37, nom:'Tindouf'},{num:38, nom:'Tissemsilt'},{num:39, nom:'El Oued'},{num:40, nom:'Khenchela'},{num:41, nom:'Souk Ahras'},{num:42, nom:'Tipaza'},
+    {num:43, nom:'Mila'},{num:44, nom:'Ain Defla'},{num:45, nom:'Naama'},{num:46, nom:'Aïn Témouchent'},{num:47, nom:'Ghardaia'},{num:48, nom:'Relizane'},
+    {num:49, nom:'El Mghair'},{num:50, nom:'El Menia'},{num:51, nom:'Ouled Djellal'},{num:52, nom:'Bordj Baji Mokhtar'},{num:53, nom:'Béni Abbès'},
+    {num:54, nom:'Timimoun'},{num:55, nom:'Touggourt'},{num:56, nom:'Djanet'},{num:57, nom:'In Salah'},{num:58, nom:'In Guezzam'},
+]
+
 
     function display() {
-      return info.map((item) => {
+      return states.map((item) => {
         return (
-          <option value={item.nomstate}>{item.nomstate}</option>
+          <option value={item.nom}>{item.num} - {item.nom}</option>
         );
       });
     }
@@ -87,7 +96,6 @@ function AboutUs() {
       valid = false;
     }
 
-    console.log(valid);
     if (valid) {
       setshow(true);
       addDonate();
