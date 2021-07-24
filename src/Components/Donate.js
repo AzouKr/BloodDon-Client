@@ -25,7 +25,7 @@ function AboutUs() {
   const [show8, setshow8] = useState(true);
   const [info, setinfo] = useState([]);
 
-  Axios.get("https://blood-don.herokuapp.com/state").then((response) => {
+  Axios.get("https://blood-don.herokuapp.com/states").then((response) => {
       setinfo(response.data);
     });
 
