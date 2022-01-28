@@ -15,6 +15,12 @@ Home Page
 ![Landing Page](src/img/homepage.jpg)
 <br>
 
+## Live-Demo
+https://blooddonations.netlify.app/   
+Feel free to play around there as much as you like 
+We will keep this demo updated with our newest releases as they come, so that you can check out new features there first before deciding to deploy them in your own environments. 
+
+
 # Technical Details
 This application is web-based, For all the front-end components, [ReactJs](https://reactjs.org/). The application is essentially split into ReactJs for the frontend amd [NodeJs](https://nodejs.org/) for the backend and [MySql](https://www.mysql.com/) for the DataBase.
 
